@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PS1 Bios Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #000;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'VT323', monospace;
+        user-select: none;
+      }
+      /* CRT Scanline Effect */
+      .scanlines::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(18, 16, 16, 0) 50%,
+          rgba(0, 0, 0, 0.25) 50%
+        );
+        background-size: 100% 4px;
+        z-index: 50;
+        pointer-events: none;
+      }
+      /* Subtle Flicker */
+      @keyframes flicker {
+        0% { opacity: 0.97; }
+        50% { opacity: 1; }
+        100% { opacity: 0.98; }
+      }
+      .crt-flicker {
+        animation: flicker 0.15s infinite;
+      }
+      
+      /* Retro Font smoothing overrides for crisp pixels if possible */
+      .pixel-font {
+        font-smooth: never;
+        -webkit-font-smoothing: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

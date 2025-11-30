@@ -1,0 +1,5 @@
+{
+  "name": "PS1 Bios Simulator",
+  "description": "An accurate simulation of the Sony PlayStation 1 startup sequence and BIOS menu operating without a disk.",
+  "requestFramePermissions": []
+}
